@@ -32,6 +32,24 @@ def create(request):
         # 위의 코드가 return redirect('profile/' + str(pst.id)) 임!! 위의 코드처럼 쓰는 걸 더 추천한다고..
         # detail은 urls.py의 detail임
 
+def update(request, designer_id):
+    post = get_object_or_404(Designer, pk = designer_id)
+
+    if request.method == 'POST':
+        if 'image' in request.FILES:
+            post.image = request.FILES['image']
+        post.name = request.POST['name']
+        post.address = request.POST['address']
+        post.description = request.POST['description']
+
+        post.save()
+
+        return redirect('detail', post.id)
+
+    else:
+        return render(request, 'update.html', {'designer' : post })
+
+
 def delete(request, designer_id):
     post = get_object_or_404(Designer, pk = designer_id)
     post.delete()

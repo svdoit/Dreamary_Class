@@ -5,7 +5,7 @@
 {% block link %}{% static 'css/new.css' %}{% endblock %}
 
 {% block content %}
-<div class="contatiner">
+<div class="container">
     <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="{% static 'Images/Dreamary_Logo.png' %}" alt="" width="72" height="72">
         <h2>드리머리와 함께 하기</h2>
@@ -34,9 +34,9 @@
                 <small id="Name" class="form-text text-muted">예시) 서울특별시 강남구, 경기도 성남시 등</small>
             </div>
 
-            <div class="mb-4">
+            <div class="mb-3">
                 <label for="inputDescription">당신을 소개해 주세요 </label>
-                <input type="text" class="form-control" id="inputDescription" name="description" required>
+                <textarea type="text" class="form-control" id="inputDescription" name="description" cols="40" rows="10" required></textarea>
                 <small id="Name" class="form-text text-muted">고객님들에게 전하고 싶은 말을 적어 주세요.</small>
             </div>
             <hr class="mb-4">
